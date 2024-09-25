@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "",
   "navigationStyle": "custom",
+  "enablePullDownRefresh": true,
   "usingComponents": {
     "record-card": "../../components/record-card/record-card",
     "header-bar": "../../components/header-bar/Header"

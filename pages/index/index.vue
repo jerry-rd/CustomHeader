@@ -2,7 +2,9 @@
 	<view>
 		<HeaderBar title="课程中心" :isShowBack="false" />
 		<view class="content">
-			<record-card v-for="item in records"></record-card>
+			<record-card v-for="item in records">{{ item }}</record-card>
+			
+			<button @click="toDetail"> 跳转测试页面</button>
 		</view>
 	</view>
 </template>
@@ -13,20 +15,16 @@ import { navigationTo } from '@/utils/tools';
 
 import HeaderBar from '@/components/header-bar/Header.vue';
 
-const records = ref([
-	{},
-	{},
-	{}
-]);
+const records = ref([{}, {}, {}]);
 
 const toDetail = () => {
-	navigationTo({ url: '/pages/detail/detail' }, 'reLaunch');
+	navigationTo({ url: '/pages/mine/login' }, 'reLaunch');
 };
 </script>
 
 <style lang="scss" scoped>
 .content {
-	padding:30rpx;
+	padding: 30rpx;
 	position: relative;
 }
 </style>

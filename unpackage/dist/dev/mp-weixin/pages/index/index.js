@@ -1,5 +1,6 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+const utils_tools = require("../../utils/tools.js");
 if (!Array) {
   const _easycom_record_card2 = common_vendor.resolveComponent("record-card");
   _easycom_record_card2();
@@ -12,11 +13,10 @@ const HeaderBar = () => "../../components/header-bar/Header.js";
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "index",
   setup(__props) {
-    const records = common_vendor.ref([
-      {},
-      {},
-      {}
-    ]);
+    const records = common_vendor.ref([{}, {}, {}]);
+    const toDetail = () => {
+      utils_tools.navigationTo({ url: "/pages/mine/login" }, "reLaunch");
+    };
     return (_ctx, _cache) => {
       return {
         a: common_vendor.p({
@@ -25,9 +25,11 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         }),
         b: common_vendor.f(records.value, (item, k0, i0) => {
           return {
-            a: "1cf27b2a-1-" + i0
+            a: common_vendor.t(item),
+            b: "1cf27b2a-1-" + i0
           };
-        })
+        }),
+        c: common_vendor.o(toDetail)
       };
     };
   }

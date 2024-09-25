@@ -23,46 +23,37 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.card.data-v-1fcadb44 {
-  border-bottom: 1px solid #dddddd;
-  padding-top: 30rpx;
-  padding-bottom: 30rpx;
-  position: relative;
+.content.data-v-7110b05c {
+  padding: 48rpx;
 }
-.card .header-flex.data-v-1fcadb44 {
-  display: flex;
-  justify-content: space-between;
+.content .title.data-v-7110b05c {
+  color: #333;
+  font-size: 48rpx;
+  font-weight: 600;
+  line-height: 56px;
+  margin-bottom: 24rpx;
+}
+.content .tip-text.data-v-7110b05c {
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 28rpx;
+  text-align: left;
+}
+.content .form-view.data-v-7110b05c {
+  margin-top: 80rpx;
+}
+.content .form-view.data-v-7110b05c .uni-easyinput {
+  margin-bottom: 48rpx;
+}
+.content .form-view.data-v-7110b05c .uni-easyinput__content {
+  height: 100rpx;
+}
+.content .form-view .code-view.data-v-7110b05c {
+  margin-right: 28rpx;
+  color: #0077CC;
   font-size: 24rpx;
 }
-.card .header-flex .user-text.data-v-1fcadb44 {
-  color: #666;
-}
-.card .header-flex .num-text.data-v-1fcadb44 {
-  color: #999;
-}
-.card .content-flex.data-v-1fcadb44 {
-  padding-top: 20rpx;
-  display: flex;
-  justify-content: space-between;
-}
-.card .content-flex .title-text.data-v-1fcadb44 {
-  flex: 1;
-  font-size: 28rpx;
-  color: #333;
-  font-weight: 600;
-  line-height: 48rpx;
-  padding-bottom: 30rpx;
-}
-.card .content-flex .image-box.data-v-1fcadb44 {
-  width: 200rpx;
-  height: 140rpx;
-  border-radius: 8rpx;
-  margin-left: 40rpx;
-  background-color: #dddddd;
-}
-.card .process-text.data-v-1fcadb44 {
-  color: #0077cc;
-  font-size: 20rpx;
-  position: absolute;
-  bottom: 30rpx;
+.content .login-button.data-v-7110b05c {
+  margin-top: 120rpx;
 }

@@ -21,7 +21,17 @@
     "libVersion": "3.6.0",
     "appid": "touristappid",
     "projectname": "CustomHeader",
-    "condition": {},
+    "condition": {
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/mine/login",
+                    "pathName": "pages/mine/login",
+                    "query": ""
+                }
+            ]
+        }
+    },
     "editorSetting": {
         "tabIndent": "insertSpaces",
         "tabSize": 4

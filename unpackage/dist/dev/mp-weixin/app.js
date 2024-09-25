@@ -5,6 +5,7 @@ const utils_tools = require("./utils/tools.js");
 if (!Math) {
   "./pages/index/index.js";
   "./pages/mine/mine.js";
+  "./pages/mine/login.js";
   "./pages/detail/detail.js";
 }
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
@@ -19,8 +20,10 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
 });
 function createApp() {
   const app = common_vendor.createSSRApp(_sfc_main);
+  app.use(common_vendor.createPinia());
   return {
-    app
+    app,
+    Pinia: common_vendor.Pinia
   };
 }
 createApp().app.mount("#app");

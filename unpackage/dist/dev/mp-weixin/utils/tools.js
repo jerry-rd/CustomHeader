@@ -5,13 +5,21 @@ const pages = [
     path: "pages/index/index",
     style: {
       navigationBarTitleText: "",
-      navigationStyle: "custom"
+      navigationStyle: "custom",
+      enablePullDownRefresh: true
     }
   },
   {
     path: "pages/mine/mine",
     style: {
       navigationBarTitleText: "我的"
+    }
+  },
+  {
+    path: "pages/mine/login",
+    style: {
+      navigationBarTitleText: "注册登录",
+      navigationStyle: "custom"
     }
   },
   {
@@ -115,6 +123,15 @@ const isTabBarUrl = (url) => {
   const index = tabBarList.findIndex((tabBar2) => tabBar2.pagePath === pageUrl);
   return index >= 0;
 };
+const navigationTo = (options, jumpFun = "navigateTo") => {
+  const url = options.url;
+  if (isTabBarUrl(url)) {
+    common_vendor.index.switchTab(options);
+    return;
+  }
+  common_vendor.index[jumpFun](options);
+};
 exports.getSafeAreaInsertInfo = getSafeAreaInsertInfo;
 exports.initSafeAreaInsert = initSafeAreaInsert;
 exports.isTabBarUrl = isTabBarUrl;
+exports.navigationTo = navigationTo;
