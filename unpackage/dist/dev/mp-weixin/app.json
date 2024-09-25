@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "自定义导航",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "color": "#888",
+    "selectedColor": "#07c160",
+    "backgroundColor": "#F7F7F8",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "./static/tabbar/index.png",
+        "selectedIconPath": "./static/tabbar/index_Selected.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "./static/tabbar/calendar.png",
+        "selectedIconPath": "./static/tabbar/calendar_Select.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

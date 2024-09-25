@@ -1,0 +1,1 @@
+<view class="menu"><view wx:for="{{a}}" wx:for-item="item" wx:key="e" class="menu__item" bindtap="{{item.f}}"><image class="menu__img" src="{{item.a}}"/><text class="menu__text">{{item.b}}</text><text wx:if="{{item.c}}" class="menu__count">{{item.d}}</text></view></view>
