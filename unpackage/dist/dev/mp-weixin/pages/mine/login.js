@@ -16,6 +16,18 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   setup(__props) {
     const phone = common_vendor.ref("");
     const code = common_vendor.ref("");
+    const getPrivacyContract = () => {
+      common_vendor.wx$1.openPrivacyContract({
+        success: () => {
+        },
+        // 打开成功
+        fail: () => {
+        },
+        // 打开失败
+        complete: () => {
+        }
+      });
+    };
     return (_ctx, _cache) => {
       return {
         a: common_vendor.p({
@@ -34,7 +46,8 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         d: common_vendor.o(($event) => code.value = $event),
         e: common_vendor.p({
           modelValue: code.value
-        })
+        }),
+        f: common_vendor.o(getPrivacyContract)
       };
     };
   }

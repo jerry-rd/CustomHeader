@@ -5,7 +5,10 @@ const utils_tools = require("./utils/tools.js");
 if (!Math) {
   "./pages/index/index.js";
   "./pages/mine/mine.js";
+  "./pages/mine/setting.js";
   "./pages/mine/login.js";
+  "./pages/other/protocol.js";
+  "./pages/member/buy.js";
   "./pages/detail/detail.js";
 }
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({

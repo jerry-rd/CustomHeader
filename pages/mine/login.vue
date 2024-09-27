@@ -12,7 +12,19 @@
 					</template>
 				</uni-easyinput>
 			</view>
-			<button type="primary" class="login-button">登录/注册</button>
+			<button size="default" type="default" class="login-button" hover-class="is-hover">登录/注册</button>
+			<view class="tips">
+				<checkbox class="check-view" />
+				登录/注册即认为您理解并同意
+				<navigator class="href-text" url="/pages/other/protocol">用户协议</navigator>
+				和
+				<!-- #ifdef MP-WEIXIN -->
+				<navigator class="href-text" @click="getPrivacyContract" url="">隐私政策</navigator>
+				<!-- #endif -->
+				<!-- #ifndef MP-WEIXIN -->
+				<navigator class="href-text" url="/pages/other/privacy">隐私政策</navigator>
+				<!-- #endif -->
+			</view>
 		</view>
 	</view>
 </template>
@@ -23,8 +35,19 @@ import HeaderBar from '@/components/header-bar/Header.vue';
 
 const backImageUrl = '../../static/header-close.png';
 const phone = ref('');
-const code = ref('')
+const code = ref('');
 const placeholderStyle = 'color:#999999;font-size:12px';
+
+// #ifdef MP-WEIXIN
+const getPrivacyContract = () => {
+	wx.openPrivacyContract({
+		success: () => {}, // 打开成功
+		fail: () => {}, // 打开失败
+		complete: () => {}
+	});
+};
+// #endif
+
 </script>
 
 <style lang="scss" scoped>
@@ -46,20 +69,44 @@ const placeholderStyle = 'color:#999999;font-size:12px';
 	}
 	.form-view {
 		margin-top: 80rpx;
-		:deep(.uni-easyinput){
+		:deep(.uni-easyinput) {
 			margin-bottom: 48rpx;
 		}
 		:deep(.uni-easyinput__content) {
 			height: 100rpx;
 		}
-		.code-view{
+		.code-view {
 			margin-right: 28rpx;
-			color: #0077CC;
+			color: #0077cc;
 			font-size: 24rpx;
 		}
 	}
-	.login-button{
+	.login-button {
+		height: 100rpx;
+		line-height: 100rpx;
 		margin-top: 120rpx;
+		color: #ffffff;
+		background-color: #0077cc;
+		border-color: #0077cc;
+		font-size: 14px;
+		opacity: 0.9;
+	}
+	.is-hover {
+		opacity: 1;
+	}
+	.tips {
+		margin-top: 20px;
+		font-size: 24rpx;
+		color: #999999;
+		display: flex;
+		align-items: center;
+		.check-view {
+			transform: scale(0.7);
+		}
+		.href-text {
+			color: #0077cc;
+		}
 	}
 }
 </style>
+

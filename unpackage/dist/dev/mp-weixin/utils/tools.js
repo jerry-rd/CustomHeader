@@ -16,9 +16,28 @@ const pages = [
     }
   },
   {
+    path: "pages/mine/setting",
+    style: {
+      navigationBarTitleText: "账号设置"
+    }
+  },
+  {
     path: "pages/mine/login",
     style: {
       navigationBarTitleText: "注册登录",
+      navigationStyle: "custom"
+    }
+  },
+  {
+    path: "pages/other/protocol",
+    style: {
+      navigationBarTitleText: "用户协议"
+    }
+  },
+  {
+    path: "pages/member/buy",
+    style: {
+      navigationBarTitleText: "会员购买",
       navigationStyle: "custom"
     }
   },

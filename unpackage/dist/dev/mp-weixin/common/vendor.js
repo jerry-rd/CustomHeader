@@ -1292,7 +1292,7 @@ function populateParameters(fromRes, toRes) {
   let _SDKVersion = SDKVersion;
   const hostLanguage = language.replace(/_/g, "-");
   const parameters = {
-    appId: "",
+    appId: "__UNI__7C0B11E",
     appName: "CustomHeader",
     appVersion: "1.0.0",
     appVersionCode: "100",
@@ -1436,7 +1436,7 @@ const getAppBaseInfo = {
       hostName: _hostName,
       hostSDKVersion: SDKVersion,
       hostTheme: theme,
-      appId: "",
+      appId: "__UNI__7C0B11E",
       appName: "CustomHeader",
       appVersion: "1.0.0",
       appVersionCode: "100",
@@ -8520,3 +8520,4 @@ exports.resolveComponent = resolveComponent;
 exports.s = s;
 exports.t = t;
 exports.unref = unref;
+exports.wx$1 = wx$1;

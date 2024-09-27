@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "会员购买",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "header-bar": "../../components/header-bar/Header"
+  }
+}

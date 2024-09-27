@@ -51,9 +51,32 @@
 }
 .content .form-view .code-view.data-v-7110b05c {
   margin-right: 28rpx;
-  color: #0077CC;
+  color: #0077cc;
   font-size: 24rpx;
 }
 .content .login-button.data-v-7110b05c {
+  height: 100rpx;
+  line-height: 100rpx;
   margin-top: 120rpx;
+  color: #ffffff;
+  background-color: #0077cc;
+  border-color: #0077cc;
+  font-size: 14px;
+  opacity: 0.9;
+}
+.content .is-hover.data-v-7110b05c {
+  opacity: 1;
+}
+.content .tips.data-v-7110b05c {
+  margin-top: 20px;
+  font-size: 24rpx;
+  color: #999999;
+  display: flex;
+  align-items: center;
+}
+.content .tips .check-view.data-v-7110b05c {
+  transform: scale(0.7);
+}
+.content .tips .href-text.data-v-7110b05c {
+  color: #0077cc;
 }
