@@ -7,6 +7,7 @@ if (!Math) {
   "./pages/mine/mine.js";
   "./pages/mine/setting.js";
   "./pages/mine/login.js";
+  "./pages/mine/message.js";
   "./pages/other/protocol.js";
   "./pages/member/buy.js";
   "./pages/detail/detail.js";

@@ -29,6 +29,13 @@ const pages = [
     }
   },
   {
+    path: "pages/mine/message",
+    style: {
+      navigationBarTitleText: "消息中心",
+      enablePullDownRefresh: true
+    }
+  },
+  {
     path: "pages/other/protocol",
     style: {
       navigationBarTitleText: "用户协议"

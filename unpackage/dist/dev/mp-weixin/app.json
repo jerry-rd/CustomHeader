@@ -4,6 +4,7 @@
     "pages/mine/mine",
     "pages/mine/setting",
     "pages/mine/login",
+    "pages/mine/message",
     "pages/other/protocol",
     "pages/member/buy",
     "pages/detail/detail"
