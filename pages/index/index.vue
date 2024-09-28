@@ -18,7 +18,7 @@ import HeaderBar from '@/components/header-bar/Header.vue';
 const records = ref([{}, {}, {}]);
 
 const toDetail = () => {
-	navigationTo({ url: '/pages/mine/message' }, 'navigateTo');
+	navigationTo({ url: '/pages/mine/bindPhone' }, 'navigateTo');
 };
 </script>
 

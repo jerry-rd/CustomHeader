@@ -29,6 +29,13 @@ const pages = [
     }
   },
   {
+    path: "pages/mine/bindPhone",
+    style: {
+      navigationBarTitleText: "绑定手机号",
+      navigationStyle: "custom"
+    }
+  },
+  {
     path: "pages/mine/message",
     style: {
       navigationBarTitleText: "消息中心",
