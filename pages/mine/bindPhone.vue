@@ -30,7 +30,7 @@ const placeholderStyle = 'color:#999999;font-size:12px';
 .content {
 	padding: 48rpx;
 	.title {
-		color: #333;
+		color: $uni-text-color;
 		font-size: 48rpx;
 		font-weight: 600;
 		line-height: 56px;
@@ -45,7 +45,7 @@ const placeholderStyle = 'color:#999999;font-size:12px';
 		}
 		.code-view {
 			margin-right: 28rpx;
-			color: #0077cc;
+			color: $uni-color-primary;
 			font-size: 24rpx;
 		}
 	}
@@ -53,9 +53,9 @@ const placeholderStyle = 'color:#999999;font-size:12px';
 		height: 100rpx;
 		line-height: 100rpx;
 		margin-top: 120rpx;
-		color: #ffffff;
-		background-color: #0077cc;
-		border-color: #0077cc;
+		color: $uni-text-color-inverse;
+		background-color: $uni-color-primary;
+		border-color: $uni-color-primary;
 		font-size: 14px;
 		opacity: 0.9;
 	}

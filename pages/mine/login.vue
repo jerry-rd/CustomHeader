@@ -47,14 +47,13 @@ const getPrivacyContract = () => {
 	});
 };
 // #endif
-
 </script>
 
 <style lang="scss" scoped>
 .content {
 	padding: 48rpx;
 	.title {
-		color: #333;
+		color: $uni-text-color;
 		font-size: 48rpx;
 		font-weight: 600;
 		line-height: 56px;
@@ -63,7 +62,7 @@ const getPrivacyContract = () => {
 	.tip-text {
 		font-weight: 400;
 		font-size: 24rpx;
-		color: #999999;
+		color: $uni-text-color-grey;
 		line-height: 28rpx;
 		text-align: left;
 	}
@@ -77,7 +76,7 @@ const getPrivacyContract = () => {
 		}
 		.code-view {
 			margin-right: 28rpx;
-			color: #0077cc;
+			color: $uni-color-primary;
 			font-size: 24rpx;
 		}
 	}
@@ -85,9 +84,9 @@ const getPrivacyContract = () => {
 		height: 100rpx;
 		line-height: 100rpx;
 		margin-top: 120rpx;
-		color: #ffffff;
-		background-color: #0077cc;
-		border-color: #0077cc;
+		color: $uni-text-color-inverse;
+		background-color: $uni-color-primary;
+		border-color: $uni-color-primary;
 		font-size: 14px;
 		opacity: 0.9;
 	}
@@ -97,16 +96,15 @@ const getPrivacyContract = () => {
 	.tips {
 		margin-top: 20px;
 		font-size: 24rpx;
-		color: #999999;
+		color: $uni-text-color-grey;
 		display: flex;
 		align-items: center;
 		.check-view {
 			transform: scale(0.7);
 		}
 		.href-text {
-			color: #0077cc;
+			color: $uni-color-primary;
 		}
 	}
 }
 </style>
-

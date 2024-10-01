@@ -1,0 +1,13 @@
+{
+  "name": "zk_uniapp",
+  "version": "1.0.0",
+  "description": "zk_uniapp",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tuyongtao",
+  "dependencies": {
+    "dayjs": "^1.0.0"
+  }
+}

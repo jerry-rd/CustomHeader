@@ -1,1 +1,1 @@
-<view class="content"><header-bar wx:if="{{a}}" u-i="369ab231-0" bind:__l="__l" u-p="{{a}}"/><view class="text-area"><text class="title">内容内容内容内容内容内容内容</text></view></view>
+<view class="content"><header-bar wx:if="{{a}}" u-i="742fc120-0" bind:__l="__l" u-p="{{a}}"/><view class="text-area"><text class="title">内容内容内容内容内容内容内容</text></view></view>

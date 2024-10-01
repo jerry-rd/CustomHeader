@@ -67,14 +67,14 @@ const getPrivacyContract = () => {
 .content {
 	height: 100vh;
 	width: 100vw;
-	background-color: #f7f7f8;
+	background-color: $uni-bg-color-grey;
 	margin-bottom: 74rpx;
 	.info-view {
-		background-color: #ffffff;
+		background-color: $uni-bg-color;
 		padding: 0px 30rpx;
 		.info-title {
 			font-size: 28rpx;
-			color: #666;
+			color: $uni-text-color-secondary;
 			margin-bottom: 10rpx;
 			margin-top: 30rpx;
 		}
@@ -85,10 +85,10 @@ const getPrivacyContract = () => {
 			align-items: center;
 			.label {
 				font-size: 32rpx;
-				color: #333;
+				color: $uni-text-color;
 			}
 			.value {
-				color: #999;
+				color: $uni-text-color-grey;
 				flex: 1;
 				font-size: 28rpx;
 				display: inline-flex;
@@ -105,17 +105,17 @@ const getPrivacyContract = () => {
 		height: 108rpx;
 		width: 100%;
 		line-height: 108rpx;
-		background-color: #ffffff;
+		background-color: $uni-text-color-inverse;
 		font-weight: 500;
 		font-size: 32rpx;
-		color: #333333;
+		color: $uni-text-color;
 		text-align: center;
 	}
 	.company-name {
 		margin-top: 100rpx;
 		font-weight: bold;
 		font-size: 40rpx;
-		color: #0077cc;
+		color: $uni-color-primary;
 		line-height: 47rpx;
 		text-align: center;
 		margin-bottom: 60rpx;
@@ -124,18 +124,18 @@ const getPrivacyContract = () => {
 		text-align: center;
 		font-weight: 500;
 		font-size: 24rpx;
-		color: #999999;
+		color: $uni-text-color-grey;
 		margin-bottom: 20rpx;
 	}
 	.vesion {
 		text-align: center;
 		font-weight: 500;
 		font-size: 24rpx;
-		color: #999999;
+		color: $uni-text-color-grey;
 		margin-bottom: 86rpx;
 	}
 	.other-info {
-		color: #999999;
+		color: $uni-text-color-grey;
 		font-size: 24rpx;
 		display: flex;
 		justify-content: space-between;

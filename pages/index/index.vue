@@ -3,7 +3,6 @@
 		<HeaderBar title="课程中心" :isShowBack="false" />
 		<view class="content">
 			<record-card v-for="item in records">{{ item }}</record-card>
-			
 			<button @click="toDetail"> 跳转测试页面</button>
 		</view>
 	</view>

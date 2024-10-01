@@ -21,17 +21,7 @@
     "libVersion": "3.6.0",
     "appid": "wxce430daed8715668",
     "projectname": "CustomHeader",
-    "condition": {
-        "miniprogram": {
-            "list": [
-                {
-                    "name": "pages/mine/login",
-                    "pathName": "pages/mine/login",
-                    "query": ""
-                }
-            ]
-        }
-    },
+    "condition": {},
     "editorSetting": {
         "tabIndent": "insertSpaces",
         "tabSize": 4

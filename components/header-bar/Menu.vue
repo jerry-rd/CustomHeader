@@ -29,7 +29,6 @@ const list = computed(() => {
       icon: `${imageServerURl}/header-menu-message.png`,
       url: '/pages/index/index'
     },
-
     {
       title: '购物车',
       trackName: 'cv_share',

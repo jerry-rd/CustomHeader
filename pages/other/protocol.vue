@@ -35,17 +35,17 @@
 	padding: 30rpx;
 	.time-text {
 		font-size: 28rpx;
-		color: #666;
+		color: $uni-text-color-secondary;
 		margin-bottom: 60rpx;
 	}
 	.title-text {
-		color: #333;
+		color: $uni-text-color;
 		font-size: 36rpx;
 		line-height: 40rpx;
 		margin-bottom: 40rpx;
 	}
 	.p-text {
-		color: #333;
+		color: $uni-text-color;
 		font-size: 28rpx;
 		line-height: 60rpx;
 		margin-bottom: 40rpx;

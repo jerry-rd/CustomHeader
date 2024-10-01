@@ -57,7 +57,7 @@ const backImageUrl = '../../static/header-close.png';
 .content {
 	padding: 48rpx;
 	.title {
-		color: #333;
+		color: $uni-text-color;
 		font-size: 40rpx;
 		font-weight: 600;
 		margin-bottom: 24rpx;
@@ -66,7 +66,7 @@ const backImageUrl = '../../static/header-close.png';
 	.tip-text {
 		font-weight: 400;
 		font-size: 28rpx;
-		color: #999999;
+		color: $uni-text-color-grey;
 		text-align: left;
 		text-align: center;
 	}
@@ -80,7 +80,7 @@ const backImageUrl = '../../static/header-close.png';
 			width: 33.33%;
 			padding: 10rpx;
 			.pick-content {
-				background-color: #f7f7f8;
+				background-color: $uni-bg-color-grey;
 				border-radius: 16rpx;
 				height: 240rpx;
 				width: 100%;
@@ -90,7 +90,7 @@ const backImageUrl = '../../static/header-close.png';
 				align-items: center;
 				justify-content: center;
 				flex-wrap: wrap;
-				color: #333;
+				color: $uni-text-color;
 				position: relative;
 				.label {
 					font-size: 24rpx;
@@ -105,7 +105,7 @@ const backImageUrl = '../../static/header-close.png';
 					}
 				}
 				.old-price {
-					color: #999;
+					color: $uni-text-color-grey;
 					font-size: 20rpx;
 					line-height: 28rpx;
 					margin-top: 20rpx;
@@ -116,7 +116,7 @@ const backImageUrl = '../../static/header-close.png';
 					top: -30rpx;
 					left: 0rpx;
 					font-size: 20rpx;
-					color: #ffffff;
+					color: $uni-text-color-inverse;
 					padding: 6rpx 6rpx;
 					border-radius: 8rpx;
 					background: linear-gradient(90deg, #ff8412 0%, #ff3f15 100%);
@@ -124,8 +124,8 @@ const backImageUrl = '../../static/header-close.png';
 			}
 			&.active {
 				.pick-content {
-					border: 2rpx solid #0077cc;
-					color: #0077cc;
+					border: 2rpx solid $uni-color-primary;
+					color: $uni-color-primary;
 				}
 			}
 		}
@@ -134,9 +134,9 @@ const backImageUrl = '../../static/header-close.png';
 		height: 100rpx;
 		line-height: 100rpx;
 		margin-top: 120rpx;
-		color: #ffffff;
-		background-color: #0077cc;
-		border-color: #0077cc;
+		color: $uni-text-color-inverse;
+		background-color: $uni-color-primary;
+		border-color: $uni-color-primary;
 		font-size: 14px;
 		opacity: 0.9;
 	}
@@ -146,12 +146,12 @@ const backImageUrl = '../../static/header-close.png';
 	.tips {
 		margin-top: 20px;
 		font-size: 24rpx;
-		color: #999999;
+		color: $uni-text-color-grey;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		.href-text {
-			color: #0077cc;
+			color: $uni-color-primary;
 		}
 	}
 }

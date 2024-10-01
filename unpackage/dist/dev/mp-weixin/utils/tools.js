@@ -12,7 +12,8 @@ const pages = [
   {
     path: "pages/mine/mine",
     style: {
-      navigationBarTitleText: "我的"
+      navigationBarTitleText: "我的",
+      navigationStyle: "custom"
     }
   },
   {

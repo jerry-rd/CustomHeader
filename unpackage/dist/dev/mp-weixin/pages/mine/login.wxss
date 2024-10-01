@@ -36,7 +36,7 @@
 .content .tip-text.data-v-7110b05c {
   font-weight: 400;
   font-size: 24rpx;
-  color: #999999;
+  color: #999;
   line-height: 28rpx;
   text-align: left;
 }
@@ -58,7 +58,7 @@
   height: 100rpx;
   line-height: 100rpx;
   margin-top: 120rpx;
-  color: #ffffff;
+  color: #fff;
   background-color: #0077cc;
   border-color: #0077cc;
   font-size: 14px;
@@ -70,7 +70,7 @@
 .content .tips.data-v-7110b05c {
   margin-top: 20px;
   font-size: 24rpx;
-  color: #999999;
+  color: #999;
   display: flex;
   align-items: center;
 }
