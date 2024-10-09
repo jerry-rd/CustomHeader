@@ -1292,13 +1292,13 @@ function populateParameters(fromRes, toRes) {
   let _SDKVersion = SDKVersion;
   const hostLanguage = language.replace(/_/g, "-");
   const parameters = {
-    appId: "__UNI__7C0B11E",
-    appName: "CustomHeader",
+    appId: "__UNI__443B35D",
+    appName: "shiyiApp",
     appVersion: "1.0.0",
     appVersionCode: "100",
     appLanguage: getAppLanguage(hostLanguage),
-    uniCompileVersion: "4.28",
-    uniRuntimeVersion: "4.28",
+    uniCompileVersion: "4.29",
+    uniRuntimeVersion: "4.29",
     uniPlatform: "mp-weixin",
     deviceBrand,
     deviceModel: model,
@@ -1436,8 +1436,8 @@ const getAppBaseInfo = {
       hostName: _hostName,
       hostSDKVersion: SDKVersion,
       hostTheme: theme,
-      appId: "__UNI__7C0B11E",
-      appName: "CustomHeader",
+      appId: "__UNI__443B35D",
+      appName: "shiyiApp",
       appVersion: "1.0.0",
       appVersionCode: "100",
       appLanguage: getAppLanguage(hostLanguage)
@@ -7733,6 +7733,7 @@ const createHook = (lifecycle) => (hook, target = getCurrentInstance()) => {
   !isInSSRComponentSetup && injectHook(lifecycle, hook, target);
 };
 const onLaunch = /* @__PURE__ */ createHook(ON_LAUNCH);
+const onLoad = /* @__PURE__ */ createHook(ON_LOAD);
 var isVue2 = false;
 function set(target, key, val) {
   if (Array.isArray(target)) {
@@ -8507,12 +8508,15 @@ exports.computed = computed;
 exports.createPinia = createPinia;
 exports.createSSRApp = createSSRApp;
 exports.defineComponent = defineComponent;
+exports.defineStore = defineStore;
 exports.e = e;
 exports.f = f;
 exports.index = index;
 exports.n = n;
 exports.o = o;
 exports.onLaunch = onLaunch;
+exports.onLoad = onLoad;
+exports.onMounted = onMounted;
 exports.p = p;
 exports.reactive = reactive;
 exports.ref = ref;

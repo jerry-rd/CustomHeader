@@ -2,6 +2,7 @@
 const common_vendor = require("../../common/vendor.js");
 const common_assets = require("../../common/assets.js");
 const utils_tools = require("../../utils/tools.js");
+const stores_user = require("../../stores/user.js");
 if (!Array) {
   const _easycom_uni_icons2 = common_vendor.resolveComponent("uni-icons");
   _easycom_uni_icons2();
@@ -14,6 +15,7 @@ const HeaderBar = () => "../../components/header-bar/Header.js";
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "mine",
   setup(__props) {
+    const userStore = stores_user.useUserStore();
     const goMineView = () => {
       utils_tools.navigationTo({ url: "/pages/mine/setting" }, "navigateTo");
     };
@@ -24,6 +26,11 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         }
       });
     };
+    common_vendor.onLoad(() => {
+      userStore.getUserInfo();
+    });
+    common_vendor.onMounted(() => {
+    });
     return (_ctx, _cache) => {
       return {
         a: common_assets._imports_0,

@@ -54,6 +54,9 @@
   color: #0077cc;
   font-size: 24rpx;
 }
+.content .form-view .code-view .countdown.data-v-7110b05c {
+  color: #999;
+}
 .content .login-button.data-v-7110b05c {
   height: 100rpx;
   line-height: 100rpx;
@@ -63,6 +66,9 @@
   border-color: #0077cc;
   font-size: 14px;
   opacity: 0.9;
+}
+.content .login-button[disabled].data-v-7110b05c {
+  opacity: 0.7;
 }
 .content .is-hover.data-v-7110b05c {
   opacity: 1;

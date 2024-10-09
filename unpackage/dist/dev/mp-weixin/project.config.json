@@ -6,8 +6,8 @@
     },
     "setting": {
         "urlCheck": false,
-        "es6": true,
-        "postcss": false,
+        "es6": false,
+        "postcss": true,
         "minified": false,
         "newFeature": true,
         "bigPackageSizeSupport": true,
@@ -20,7 +20,7 @@
     "compileType": "miniprogram",
     "libVersion": "3.6.0",
     "appid": "wxce430daed8715668",
-    "projectname": "CustomHeader",
+    "projectname": "shiyiApp",
     "condition": {},
     "editorSetting": {
         "tabIndent": "insertSpaces",

@@ -52,6 +52,7 @@
 .content .info-view .info-item .value.data-v-0bb48146 {
   color: #999;
   flex: 1;
+  height: 80rpx;
   font-size: 28rpx;
   display: inline-flex;
   align-items: center;

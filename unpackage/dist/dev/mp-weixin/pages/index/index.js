@@ -15,7 +15,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   setup(__props) {
     const records = common_vendor.ref([{}, {}, {}]);
     const toDetail = () => {
-      utils_tools.navigationTo({ url: "/pages/mine/bindPhone" }, "navigateTo");
+      utils_tools.navigationTo({ url: "/pages/mine/setting" }, "navigateTo");
     };
     return (_ctx, _cache) => {
       return {
@@ -23,10 +23,11 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
           title: "课程中心",
           isShowBack: false
         }),
-        b: common_vendor.f(records.value, (item, k0, i0) => {
+        b: common_vendor.f(records.value, (item, index, i0) => {
           return {
             a: common_vendor.t(item),
-            b: "1cf27b2a-1-" + i0
+            b: index,
+            c: "1cf27b2a-1-" + i0
           };
         }),
         c: common_vendor.o(toDetail)

@@ -1,13 +1,20 @@
 {
-  "name": "zk_uniapp",
-  "version": "1.0.0",
-  "description": "zk_uniapp",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "tuyongtao",
-  "dependencies": {
-    "dayjs": "^1.0.0"
-  }
+	"name": "shiyi_app",
+	"version": "1.0.0",
+	"description": "shiyi_app",
+	"main": "main.ts",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "tuyongtao",
+	"dependencies": {
+		"dayjs": "^1.11.10",
+		"pinia": "^2.0.17",
+		"qs": "^6.12.1",
+		"unplugin-auto-import": "^0.17.5",
+		"vite": "^5.4.8"
+	},
+	"devDependencies": {  
+	  "@dcloudio/types": "^3.0.7"  
+	}
 }

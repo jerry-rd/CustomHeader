@@ -1,5 +1,7 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+const utils_tools = require("../../utils/tools.js");
+const stores_user = require("../../stores/user.js");
 if (!Array) {
   const _easycom_uni_icons2 = common_vendor.resolveComponent("uni-icons");
   _easycom_uni_icons2();
@@ -11,6 +13,10 @@ if (!Math) {
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "setting",
   setup(__props) {
+    const userStore = stores_user.useUserStore();
+    const goBindPhone = () => {
+      utils_tools.navigationTo({ url: "/pages/mine/bindPhone" }, "navigateTo");
+    };
     const getPrivacyContract = () => {
       common_vendor.wx$1.openPrivacyContract({
         success: () => {
@@ -24,12 +30,9 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       });
     };
     return (_ctx, _cache) => {
+      var _a, _b, _c, _d, _e, _f;
       return {
-        a: common_vendor.p({
-          type: "forward",
-          size: "16",
-          color: "#999"
-        }),
+        a: (_b = (_a = common_vendor.unref(userStore)) == null ? void 0 : _a.userInfo) == null ? void 0 : _b.avatar,
         b: common_vendor.p({
           type: "forward",
           size: "16",
@@ -40,12 +43,20 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
           size: "16",
           color: "#999"
         }),
-        d: common_vendor.p({
+        d: common_vendor.t((_d = (_c = common_vendor.unref(userStore)) == null ? void 0 : _c.userInfo) == null ? void 0 : _d.phone),
+        e: common_vendor.p({
           type: "forward",
           size: "16",
           color: "#999"
         }),
-        e: common_vendor.o(getPrivacyContract)
+        f: common_vendor.o(goBindPhone),
+        g: common_vendor.t((_f = (_e = common_vendor.unref(userStore)) == null ? void 0 : _e.userInfo) == null ? void 0 : _f.nickname),
+        h: common_vendor.p({
+          type: "forward",
+          size: "16",
+          color: "#999"
+        }),
+        i: common_vendor.o(getPrivacyContract)
       };
     };
   }

@@ -1,5 +1,6 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+const stores_user = require("../../stores/user.js");
 if (!Array) {
   const _easycom_uni_easyinput2 = common_vendor.resolveComponent("uni-easyinput");
   _easycom_uni_easyinput2();
@@ -14,8 +15,33 @@ const placeholderStyle = "color:#999999;font-size:12px";
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "login",
   setup(__props) {
+    const userStore = stores_user.useUserStore();
     const phone = common_vendor.ref("");
-    const code = common_vendor.ref("");
+    const smsCode = common_vendor.ref("");
+    const checked = common_vendor.ref(false);
+    const phoneRegex = /^1[3-9]\d{9}$/;
+    const checkedChange = (e) => {
+      var _a;
+      checked.value = (_a = e == null ? void 0 : e.detail) == null ? void 0 : _a.value.includes("1");
+    };
+    const getSmsCode = () => {
+      if (!phoneRegex.test(phone.value)) {
+        return common_vendor.index.showToast({ title: "号码格式错误", icon: "none", duration: 2e3 });
+      }
+      userStore.sendSmsCode({ phone: phone.value });
+    };
+    const loginBind = () => {
+      if (!phoneRegex.test(phone.value)) {
+        return common_vendor.index.showToast({ title: "号码格式错误", icon: "none", duration: 2e3 });
+      }
+      if (!smsCode.value) {
+        return common_vendor.index.showToast({ title: "请输入验证码", icon: "none", duration: 2e3 });
+      }
+      if (!checked.value) {
+        return common_vendor.index.showToast({ title: "请先阅读并同意协议", icon: "none", duration: 2e3 });
+      }
+      userStore.loginBySmsCode({ phone: phone.value, smsCode: smsCode.value });
+    };
     const getPrivacyContract = () => {
       common_vendor.wx$1.openPrivacyContract({
         success: () => {
@@ -29,7 +55,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       });
     };
     return (_ctx, _cache) => {
-      return {
+      return common_vendor.e({
         a: common_vendor.p({
           isShowBack: true,
           isHideMenu: true,
@@ -43,12 +69,22 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
           placeholder: "请输入手机号",
           modelValue: phone.value
         }),
-        d: common_vendor.o(($event) => code.value = $event),
-        e: common_vendor.p({
-          modelValue: code.value
+        d: common_vendor.unref(userStore).countDown === 0
+      }, common_vendor.unref(userStore).countDown === 0 ? {
+        e: common_vendor.o(getSmsCode)
+      } : {
+        f: common_vendor.t(common_vendor.unref(userStore).countDown)
+      }, {
+        g: common_vendor.o(($event) => smsCode.value = $event),
+        h: common_vendor.p({
+          maxlength: "6",
+          modelValue: smsCode.value
         }),
-        f: common_vendor.o(getPrivacyContract)
-      };
+        i: common_vendor.unref(userStore).isLogin || !checked.value,
+        j: common_vendor.o(loginBind),
+        k: common_vendor.o(checkedChange),
+        l: common_vendor.o(getPrivacyContract)
+      });
     };
   }
 });

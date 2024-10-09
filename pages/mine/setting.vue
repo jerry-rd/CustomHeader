@@ -6,7 +6,7 @@
 				<view class="label">用户头像</view>
 				<view class="value">
 					<view class="value-content">
-						<image style="width: 36px; height: 36px" mode="aspectFit" src=""></image>
+						<image style="width: 36px; height: 36px" mode="aspectFit" :src="userStore?.userInfo?.avatar"></image>
 					</view>
 					<uni-icons type="forward" size="16" color="#999"></uni-icons>
 				</view>
@@ -21,15 +21,15 @@
 			<view class="info-title">绑定信息</view>
 			<view class="info-item">
 				<view class="label">绑定手机号</view>
-				<view class="value">
-					<text class="value-content">15919923125</text>
+				<view class="value" @click="goBindPhone">
+					<text class="value-content">{{ userStore?.userInfo?.phone }}</text>
 					<uni-icons type="forward" size="16" color="#999"></uni-icons>
 				</view>
 			</view>
 			<view class="info-item">
 				<view class="label">绑定微信</view>
 				<view class="value">
-					<text class="value-content">dasheng</text>
+					<text class="value-content">{{ userStore?.userInfo?.nickname }}</text>
 					<uni-icons type="forward" size="16" color="#999"></uni-icons>
 				</view>
 			</view>
@@ -52,6 +52,15 @@
 </template>
 
 <script lang="ts" setup>
+import { navigationTo } from '@/utils/tools';
+import { useUserStore } from '@/stores/user';
+
+const userStore = useUserStore();
+
+const goBindPhone = () => {
+	navigationTo({ url: '/pages/mine/bindPhone' }, 'navigateTo');
+};
+
 // #ifdef MP-WEIXIN
 const getPrivacyContract = () => {
 	wx.openPrivacyContract({
@@ -90,6 +99,7 @@ const getPrivacyContract = () => {
 			.value {
 				color: $uni-text-color-grey;
 				flex: 1;
+				height: 80rpx;
 				font-size: 28rpx;
 				display: inline-flex;
 				align-items: center;

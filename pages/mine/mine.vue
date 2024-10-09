@@ -38,8 +38,15 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue';
+import { onLoad } from '@dcloudio/uni-app';
 import { navigationTo } from '@/utils/tools';
 import HeaderBar from '@/components/header-bar/Header.vue';
+import { useUserStore } from '@/stores/user';
+
+const userStore = useUserStore();
+
+
 
 const goMineView = () => {
 	navigationTo({ url: '/pages/mine/setting' }, 'navigateTo');
@@ -52,6 +59,12 @@ const scanAction = () => {
 		}
 	});
 };
+
+onLoad(() => {
+	userStore.getUserInfo()
+});
+onMounted(() => {
+});
 </script>
 <style lang="scss" scoped>
 .button-view {
