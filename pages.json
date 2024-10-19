@@ -47,6 +47,14 @@
 				"navigationBarTitleText": "用户协议"
 			}
 		},
+		{
+			"path": "pages/mine/avatarCropper",
+			"style": {
+				"navigationBarTitleText": "头像设置",
+				"enablePullDownRefresh": false,
+				"disableScroll": true
+			}
+		},
 		// #ifndef MP-WEIXIN
 		{
 			"path": "pages/other/privacy",

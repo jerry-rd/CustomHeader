@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { getUserInfo, loginSmsCode, captchaSmsCode, phoneRebind } from '@/api/user';
+import { getUserInfo, loginSmsCode, captchaSmsCode, phoneRebind, userLogout, uploadAvatar, updateUserInfo } from '@/api/user';
 
 export const useUserStore = defineStore('user', {
 	state: () => {
@@ -47,6 +47,27 @@ export const useUserStore = defineStore('user', {
 			this.isLogin = false;
 			if (res.code === 0) {
 				await this.getUserInfo();
+				uni.navigateBack({ delta: 1 });
+			}
+		},
+		async logoutAction() {
+			const res: any = await userLogout();
+			if (res.code === 0) {
+				this.userInfo = null;
+				uni.clearStorageSync();
+				uni.navigateBack({ delta: 1 });
+			}
+		},
+		async updateUserInfo(params: any) {
+			const res: any = await updateUserInfo(params);
+			if (res.code === 0) {
+				await this.getUserInfo();
+			}
+		},
+		async uploadAvatar(file: any) {
+			const res: any = await uploadAvatar(file);
+			if (res.code === 0) {
+				await this.updateUserInfo({ avatar: res.data.avatar });
 				uni.navigateBack({ delta: 1 });
 			}
 		}

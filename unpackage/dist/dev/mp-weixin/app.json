@@ -7,6 +7,7 @@
     "pages/mine/bindPhone",
     "pages/mine/message",
     "pages/other/protocol",
+    "pages/mine/avatarCropper",
     "pages/member/buy",
     "pages/detail/detail"
   ],

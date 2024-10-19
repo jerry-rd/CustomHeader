@@ -4,7 +4,7 @@
 			<view class="info-title">账号信息</view>
 			<view class="info-item">
 				<view class="label">用户头像</view>
-				<view class="value">
+				<view class="value" @click="changeUserAvatar">
 					<view class="value-content">
 						<image style="width: 36px; height: 36px" mode="aspectFit" :src="userStore?.userInfo?.avatar"></image>
 					</view>
@@ -13,8 +13,8 @@
 			</view>
 			<view class="info-item">
 				<view class="label">账号名称</view>
-				<view class="value">
-					<text class="value-content">1233122</text>
+				<view class="value" @click="showNamePop">
+					<text class="value-content">{{ userStore?.userInfo?.nickname }}</text>
 					<uni-icons type="forward" size="16" color="#999"></uni-icons>
 				</view>
 			</view>
@@ -29,12 +29,12 @@
 			<view class="info-item">
 				<view class="label">绑定微信</view>
 				<view class="value">
-					<text class="value-content">{{ userStore?.userInfo?.nickname }}</text>
+					<text class="value-content">{{ '未绑定' }}</text>
 					<uni-icons type="forward" size="16" color="#999"></uni-icons>
 				</view>
 			</view>
 		</view>
-		<view class="btn-view">退出登录</view>
+		<view class="btn-view" @click="goLogout">退出登录</view>
 		<view class="btn-view">注销账号</view>
 		<view class="company-name">曼顿科技</view>
 		<view class="app-copy">APP名称 ©️ 2012-2024</view>
@@ -48,17 +48,41 @@
 			<navigator class="href-text" url="/pages/other/privacy">隐私政策</navigator>
 			<!-- #endif -->
 		</view>
+		<view>
+			<uni-popup ref="inputDialog" type="dialog">
+				<uni-popup-dialog ref="inputClose" mode="input" title="账号名称" v-model="nickName" placeholder="请输入账号名称" @confirm="dialogInputConfirm"></uni-popup-dialog>
+			</uni-popup>
+		</view>
 	</view>
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue';
 import { navigationTo } from '@/utils/tools';
 import { useUserStore } from '@/stores/user';
-
 const userStore = useUserStore();
+const inputDialog = ref(null);
+const nickName = ref(userStore?.userInfo?.nickname);
 
 const goBindPhone = () => {
 	navigationTo({ url: '/pages/mine/bindPhone' }, 'navigateTo');
+};
+
+const goLogout = () => {
+	userStore.logoutAction();
+};
+
+const changeUserAvatar = () => {
+	uni.navigateTo({ url: '/pages/mine/avatarCropper' });
+};
+
+const showNamePop = () => {
+	inputDialog.value.open();
+};
+
+const dialogInputConfirm = (e: string) => {
+	if (!e) return uni.showToast({ title: '请输入账号名称', icon: 'none', duration: 2000 });
+	userStore.updateUserInfo({nickname: e})
 };
 
 // #ifdef MP-WEIXIN

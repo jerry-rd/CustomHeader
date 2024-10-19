@@ -17,7 +17,7 @@ import HeaderBar from '@/components/header-bar/Header.vue';
 const records = ref([{}, {}, {}]);
 
 const toDetail = () => {
-	navigationTo({ url: '/pages/mine/setting' }, 'navigateTo');
+	navigationTo({ url: '/pages/mine/login' }, 'navigateTo');
 };
 </script>
 

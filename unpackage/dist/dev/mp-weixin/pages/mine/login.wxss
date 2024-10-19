@@ -86,3 +86,12 @@
 .content .tips .href-text.data-v-7110b05c {
   color: #0077cc;
 }
+.other-login.data-v-7110b05c {
+  margin-top: 300rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+}
+.other-login .btn-icon.data-v-7110b05c {
+  margin-top: 30rpx;
+}

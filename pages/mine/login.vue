@@ -31,6 +31,12 @@
 				<!-- #endif -->
 			</view>
 		</view>
+		<view class="other-login">
+			<view>其他登录方式</view>
+			<view class="btn-icon">
+				 <uni-icons type="weixin" size="46" color="#09BB07"></uni-icons>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -145,6 +151,15 @@ const getPrivacyContract = () => {
 		.href-text {
 			color: $uni-color-primary;
 		}
+	}
+}
+.other-login {
+	margin-top: 300rpx;
+	text-align: center;
+	font-size: 24rpx;
+	color: $uni-text-color-grey;
+	.btn-icon{
+		margin-top: 30rpx;
 	}
 }
 </style>

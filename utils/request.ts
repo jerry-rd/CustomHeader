@@ -76,3 +76,28 @@ export const POSTF = commonReq('POST', {
 export const PUTJ = commonReq('PUT', {
 	'Content-Type': 'application/json'
 });
+
+// 上传图片文件,并返回上传进度
+export const uploadFile = (url: string, name: string, filePath: any, onProgess: Function) => {
+	return new Promise((resolve, reject) => {
+		const uploadTask = uni.uploadFile({
+			url: api() + url,
+			filePath,
+			name,
+			header: { Authorization: uni.getStorageSync('Authorization') },
+			success: (uploadFileRes) => {
+				const res = JSON.parse(uploadFileRes.data);
+				if (res.code !== 0) {
+					uni.showToast({ title: res.message, icon: 'none', duration: 2000 });
+				}
+				resolve({ ...res, progress: res.data ? 100 : 0 });
+			},
+			fail: (error) => {
+				reject(error);
+			}
+		});
+		uploadTask.onProgressUpdate((res) => {
+			onProgess(res.progress);
+		});
+	});
+};

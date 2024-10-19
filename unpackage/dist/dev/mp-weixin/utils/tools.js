@@ -50,6 +50,14 @@ const pages = [
     }
   },
   {
+    path: "pages/mine/avatarCropper",
+    style: {
+      navigationBarTitleText: "头像设置",
+      enablePullDownRefresh: false,
+      disableScroll: true
+    }
+  },
+  {
     path: "pages/member/buy",
     style: {
       navigationBarTitleText: "会员购买",

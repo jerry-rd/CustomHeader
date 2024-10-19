@@ -10,6 +10,7 @@ if (!Math) {
   "./pages/mine/bindPhone.js";
   "./pages/mine/message.js";
   "./pages/other/protocol.js";
+  "./pages/mine/avatarCropper.js";
   "./pages/member/buy.js";
   "./pages/detail/detail.js";
 }

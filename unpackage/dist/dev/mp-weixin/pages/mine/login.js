@@ -3,11 +3,13 @@ const common_vendor = require("../../common/vendor.js");
 const stores_user = require("../../stores/user.js");
 if (!Array) {
   const _easycom_uni_easyinput2 = common_vendor.resolveComponent("uni-easyinput");
-  _easycom_uni_easyinput2();
+  const _easycom_uni_icons2 = common_vendor.resolveComponent("uni-icons");
+  (_easycom_uni_easyinput2 + _easycom_uni_icons2)();
 }
 const _easycom_uni_easyinput = () => "../../uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.js";
+const _easycom_uni_icons = () => "../../uni_modules/uni-icons/components/uni-icons/uni-icons.js";
 if (!Math) {
-  (HeaderBar + _easycom_uni_easyinput)();
+  (HeaderBar + _easycom_uni_easyinput + _easycom_uni_icons)();
 }
 const HeaderBar = () => "../../components/header-bar/Header.js";
 const backImageUrl = "../../static/header-close.png";
@@ -83,7 +85,12 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         i: common_vendor.unref(userStore).isLogin || !checked.value,
         j: common_vendor.o(loginBind),
         k: common_vendor.o(checkedChange),
-        l: common_vendor.o(getPrivacyContract)
+        l: common_vendor.o(getPrivacyContract),
+        m: common_vendor.p({
+          type: "weixin",
+          size: "46",
+          color: "#09BB07"
+        })
       });
     };
   }

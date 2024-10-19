@@ -8,9 +8,9 @@
 		</HeaderBar>
 		<view class="content">
 			<view class="avatar-view">
-				<image class="avatar" src="https://img.alicdn.com/imgextra/i1/O1CN01EI93PS1xWbnJ87dXX_!!6000000006451-2-tps-150-150.png" mode="aspectFit"></image>
+				<image class="avatar" :src="userStore?.userInfo?.avatar" mode="aspectFit"></image>
 			</view>
-			<view class="account-name">账号名称</view>
+			<view class="account-name">{{ userStore?.userInfo?.nickname }}</view>
 			<view class="vip-date">会员到期日：终身</view>
 			<view class="card-view">
 				<view class="title">最近学习</view>
@@ -24,32 +24,53 @@
 					</view>
 				</view>
 			</view>
-
 			<view class="in-view">
 				<view class="left">学习历程</view>
 				<view class="right">
-					<uni-icons type="left" size="16"></uni-icons>
-					<view class="time-text">2023-04</view>
-					<uni-icons type="right" size="16"></uni-icons>
+					<uni-icons type="left" size="16" @click="prevMonth"></uni-icons>
+					<view class="time-text">{{ dateValue }}</view>
+					<uni-icons type="right" size="16" @click="nextMonth"></uni-icons>
 				</view>
 			</view>
+			<view class="rows">
+				<view class="col">
+					<view class="value">14</view>
+					<view class="label">月签到次数</view>
+				</view>
+				<view class="col">
+					<view class="value">178.4 h</view>
+					<view class="label">月学习时长</view>
+				</view>
+			</view>
+			<uni-calendar ref="calendarRef" class="calendar" :showMonth="true" />
 		</view>
 	</view>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 import { onLoad } from '@dcloudio/uni-app';
 import { navigationTo } from '@/utils/tools';
 import HeaderBar from '@/components/header-bar/Header.vue';
 import { useUserStore } from '@/stores/user';
 
+const calendarRef = ref(null);
 const userStore = useUserStore();
-
-
 
 const goMineView = () => {
 	navigationTo({ url: '/pages/mine/setting' }, 'navigateTo');
+};
+
+const dateValue = computed<string>(() => {
+	return calendarRef.value?.nowDate?.year + '-' + calendarRef.value?.nowDate?.month;
+});
+
+const prevMonth = () => {
+	calendarRef.value?.pre();
+};
+
+const nextMonth = () => {
+	calendarRef.value?.next();
 };
 
 const scanAction = () => {
@@ -61,9 +82,10 @@ const scanAction = () => {
 };
 
 onLoad(() => {
-	userStore.getUserInfo()
+	userStore.getUserInfo();
 });
 onMounted(() => {
+	console.log(calendarRef.value);
 });
 </script>
 <style lang="scss" scoped>
@@ -167,5 +189,33 @@ onMounted(() => {
 			}
 		}
 	}
+}
+
+.rows {
+	display: flex;
+	align-items: center;
+	margin-left: -10rpx;
+	margin-right: -10rpx;
+	.col {
+		background-color: $uni-bg-color-grey;
+		flex: 1;
+		margin: 10rpx;
+		border-radius: 16rpx;
+		padding: 32rpx;
+		.value {
+			font-size: 32rpx;
+			font-weight: 600;
+			color: $uni-text-color;
+			line-height: 48rpx;
+		}
+		.label{
+			font-size: 20rpx;
+			color: $uni-text-color-grey;
+			line-height: 28rpx;
+		}
+	}
+}
+.calendar :deep(.uni-calendar__header) {
+	display: none;
 }
 </style>
